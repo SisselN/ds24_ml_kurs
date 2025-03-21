@@ -1,0 +1,6 @@
+streamlit
+joblib
+numpy
+pillow
+dotenv
+huggingface_hub
