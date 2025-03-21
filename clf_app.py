@@ -1,6 +1,6 @@
 import streamlit as st
 import os
-import joblib
+import pickle
 import numpy as np
 
 from huggingface_hub import hf_hub_download
@@ -16,7 +16,8 @@ model_path = hf_hub_download(
     use_auth_token = hf_api_key
 )
 
-model = joblib.load(model_path)
+with open(model_path, 'rb') as f:
+    model = pickle.load(f)
 
 threshold = 180
 contrast_factor = 1.55
